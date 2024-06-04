@@ -69,7 +69,7 @@ export const PaymentForm = () => {
         const res = await addPaymentDetails(values);
 
         if (res.success === true && res.data) {
-            setValues(res.data);
+            setValues(res.data as any);
             setDialog(true);
             setSnackbar('success');
         } else {

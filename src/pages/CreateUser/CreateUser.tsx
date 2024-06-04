@@ -16,11 +16,7 @@ import {
 
 import { creteUser, CreateUserParams } from '../../api/createUser.ts';
 
-import {
-    ChevronLeftRounded,
-    ContentCopyOutlined,
-    CopyAll,
-} from '@mui/icons-material';
+import { ChevronLeftRounded, ContentCopyOutlined } from '@mui/icons-material';
 
 import { useContext, useState } from 'react';
 import { GlobalContext } from '../../app/ContextProvider';

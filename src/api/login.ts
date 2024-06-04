@@ -2,7 +2,7 @@ import axios from 'axios';
 type LoginResponse = {
     success: boolean;
     data?: {
-        role: 'admin' | 'client' | 'end_user';
+        role: 'admin' | 'client' | 'endUser';
         userId: string;
     };
 };
