@@ -38,19 +38,13 @@ jobs:
         if: github.ref == 'refs/heads/master'
 
         steps:
-          - name: Download artifact
-            uses: actions/download-artifact@v3
-            with:
-              name: production-files
-        
-          - name: Extract artifact
-            run: |
-              unzip -q production-files.zip
-        
-          - name: Deploy to GitHub Pages
-            uses: peaceiris/actions-gh-pages@v3
-            with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./  # Since files are extracted in the current directory
+            - name: Download artifact
+              uses: actions/download-artifact@v3
+              with:
+                  name: production-files
 
-        
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./
