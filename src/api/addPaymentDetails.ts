@@ -30,7 +30,7 @@ export const addPaymentDetails = async (
 ): Promise<AddPaymentDetailsResponse> => {
     try {
         const res = await axios.post(
-            'http://localhost:8080/payments/add-details',
+            'http://192.168.8.131:8080/payments/add-details',
             data
         );
         //@ts-ignore

@@ -20,7 +20,7 @@ export const getPaymentList = async (
     params: GetPaymentListParams
 ): Promise<GetPaymentListResponse> => {
     try {
-        const res = await axios.get('http://localhost:8080/payments/list', {
+        const res = await axios.get('http://192.168.8.131:8080/payments/list', {
             params: params,
         });
         //@ts-ignore

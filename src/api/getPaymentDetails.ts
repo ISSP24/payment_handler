@@ -19,7 +19,7 @@ export const getPaymentDetails = async (
 ): Promise<GetPaymentDetailsResponse> => {
     try {
         const res = await axios.get(
-            `http://localhost:8080/payments/get-details/${paymentDetailId}`
+            `http://192.168.8.131:8080/payments/get-details/${paymentDetailId}`
         );
         return res.data as GetPaymentDetailsResponse;
     } catch (e) {

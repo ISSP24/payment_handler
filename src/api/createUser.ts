@@ -18,7 +18,10 @@ export const creteUser = async (
     params: CreateUserParams
 ): Promise<CreateUserResponse> => {
     try {
-        const res = await axios.post('http://localhost:8080/users/add', params);
+        const res = await axios.post(
+            'http://192.168.8.131:8080/users/add',
+            params
+        );
         //@ts-ignore
         return res.data as CreateUserResponse;
     } catch (e) {

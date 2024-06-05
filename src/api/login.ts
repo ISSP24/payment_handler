@@ -9,7 +9,7 @@ type LoginResponse = {
 
 export const login = async (code: string): Promise<LoginResponse> => {
     try {
-        const res = await axios.post('http://localhost:8080/users/login', {
+        const res = await axios.post('http://192.168.8.131:8080/users/login', {
             userId: code,
         });
         //@ts-ignore
