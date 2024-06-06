@@ -20,9 +20,12 @@ export const getPaymentList = async (
     params: GetPaymentListParams
 ): Promise<GetPaymentListResponse> => {
     try {
-        const res = await axios.get('http://192.168.8.131:8080/payments/list', {
-            params: params,
-        });
+        const res = await axios.get(
+            'https://golang-container.mnnqf7qoh65t8.us-east-1.cs.amazonlightsail.com/payments/list',
+            {
+                params: params,
+            }
+        );
         //@ts-ignore
         return res.data as GetPaymentListResponse;
     } catch (e) {

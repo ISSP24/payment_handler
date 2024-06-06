@@ -30,7 +30,7 @@ export const addPaymentDetails = async (
 ): Promise<AddPaymentDetailsResponse> => {
     try {
         const res = await axios.post(
-            'http://192.168.8.131:8080/payments/add-details',
+            'https://golang-container.mnnqf7qoh65t8.us-east-1.cs.amazonlightsail.com/payments/add-details',
             data
         );
         //@ts-ignore

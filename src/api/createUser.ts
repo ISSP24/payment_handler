@@ -19,7 +19,7 @@ export const creteUser = async (
 ): Promise<CreateUserResponse> => {
     try {
         const res = await axios.post(
-            'http://192.168.8.131:8080/users/add',
+            'https://golang-container.mnnqf7qoh65t8.us-east-1.cs.amazonlightsail.com/users/add',
             params
         );
         //@ts-ignore
