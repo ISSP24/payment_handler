@@ -2,6 +2,8 @@ import { Box, Typography } from '@mui/material';
 
 //@ts-ignore
 import Logo from './AdarshwadiLogo.jpg';
+//@ts-ignore
+import Signature from './Signature.png';
 import { forwardRef } from 'react';
 import { numToRupeesText } from './numToRupeesText';
 import { GetPaymentDetailsResponse } from '../../../api/getPaymentDetails';
@@ -82,7 +84,7 @@ export const Template = forwardRef<
                                         d='M 32.550491,148.48008 A -108.15144,-108.15144 0 0 1 140.70194,40.328644 -108.15144,-108.15144 0 0 1 248.85338,148.48008 -108.15144,-108.15144 0 0 1 140.70194,256.63153 -108.15144,-108.15144 0 0 1 32.550491,148.48008 Z'
                                     />
                                     <text
-                                        font-size='34'
+                                        font-size='30'
                                         fill='#19018c'
                                         letter-spacing='-1'
                                         font-family='sans-serif'
@@ -92,7 +94,7 @@ export const Template = forwardRef<
                                             xlinkHref='#SunCatcherStudio'
                                             startOffset='60'
                                         >
-                                            ADARSHWADI
+                                            INDIAN SWARNA
                                         </textPath>
                                     </text>
                                 </svg>
@@ -100,9 +102,9 @@ export const Template = forwardRef<
                                     src={Logo}
                                     style={{
                                         position: 'absolute',
-                                        left: 20,
-                                        top: 60,
-                                        width: 140,
+                                        left: 32,
+                                        top: 67,
+                                        width: 110,
                                         borderRadius: 8,
                                     }}
                                 />
@@ -117,47 +119,33 @@ export const Template = forwardRef<
                                     }}
                                 >
                                     <text
-                                        font-size='34'
+                                        font-size='30'
                                         fill='#19018c'
                                         font-family='sans-serif'
-                                        letterSpacing={3}
                                         font-weight='bold'
                                     >
                                         <textPath
                                             xlinkHref='#curve'
-                                            startOffset='90'
+                                            startOffset='20'
                                         >
-                                            PARTY
+                                            SAMAJ PARTY
                                         </textPath>
                                     </text>
                                     <path
                                         id='curve'
-                                        d='M 50 150 A 150 150 0 0 0 250 200'
+                                        d='M 60 170 A 150 150 0 0 0 300 150'
                                         fill='none'
                                     />
                                 </svg>
                             </Box>
                             <Typography
-                                fontSize={80}
+                                fontSize={75}
                                 component={'span'}
                                 color={'#FFFFFF'}
                                 fontFamily={'serif'}
                                 fontWeight={'bold'}
                             >
-                                ADARSHWADI PARTY
-                            </Typography>
-                            <Typography
-                                fontSize={50}
-                                variant='h2'
-                                component={'span'}
-                                color={'#FFFFFF'}
-                                fontFamily={'serif'}
-                                fontWeight={'bold'}
-                                marginTop={'auto'}
-                                marginBottom={3}
-                                sx={{ fontFamily: 'serif' }}
-                            >
-                                (LOKTANTRIK)
+                                INDIAN SWARNA SAMAJ PARTY
                             </Typography>
                         </Box>
                     </Box>
@@ -185,7 +173,7 @@ export const Template = forwardRef<
                                 fontSize={32}
                                 marginBottom={3}
                             >
-                                Reg. No. : 56/06/2016-2017/PPS-I
+                                Reg. No. : 56/214/2013-2014/PPS-I
                             </Typography>
                             <Typography
                                 color={'#19018c'}
@@ -197,8 +185,8 @@ export const Template = forwardRef<
                                 }}
                                 fontSize={32}
                             >
-                                Shop No.113, Sai Laxmi Tower, Opp. Sanjivani
-                                Hospital, Dist. Sirohi, Rajasthan-307001.
+                                3rd floor building number - 73/75, vitthalwadi,
+                                Kalbadevi road, mumbai 400002
                             </Typography>
                             <Typography
                                 color={'#19018c'}
@@ -210,8 +198,7 @@ export const Template = forwardRef<
                                 }}
                                 fontSize={32}
                             >
-                                (M) 9313510051 E-mail :
-                                adarshwadiparty110@gmail.com
+                                E-mail : indianswarnasamajpartyhq@gmail.com
                             </Typography>
                         </Box>
 
@@ -522,8 +509,18 @@ export const Template = forwardRef<
                                 color={'#D13232'}
                                 fontWeight={'bold'}
                                 fontFamily={'arial'}
+                                position={'relative'}
                             >
-                                For, Adarshwadi Party (Loktantrik)
+                                <img
+                                    src={Signature}
+                                    width={170}
+                                    style={{
+                                        position: 'absolute',
+                                        top: -75,
+                                        left: 120,
+                                    }}
+                                />
+                                For, Indian Swarna Samaj Party
                             </Typography>
                         </Box>
                         <Box
@@ -541,7 +538,7 @@ export const Template = forwardRef<
                                 }}
                                 fontSize={26}
                             >
-                                PAN : AAFAA1669R
+                                PAN : AACAI0784Q
                             </Typography>
                         </Box>
                         <Box
