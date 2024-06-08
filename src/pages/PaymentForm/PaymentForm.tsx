@@ -281,6 +281,11 @@ export const PaymentForm = () => {
                                 ...prev,
                                 sumOfRupees: 'Required field',
                             }));
+                        } else if (Number(val) > 1e9) {
+                             setErrors((prev) => ({
+                                 ...prev,
+                                 sumOfRupees: 'Maximun 100,00,00,000 amount allowed',
+                             }));
                         } else {
                             setErrors((prev) => ({
                                 ...prev,

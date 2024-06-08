@@ -11,8 +11,7 @@ import {
     TextField,
     Typography,
 } from '@mui/material';
-import { LocalizationProvider, MobileDatePicker } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
 import {
     getPaymentDetails,
     GetPaymentDetailsResponse,
@@ -20,7 +19,6 @@ import {
 
 import { ChevronLeftRounded } from '@mui/icons-material';
 
-import dayjs from 'dayjs';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { GlobalContext } from '../../app/ContextProvider';
 import { useLocation, useNavigate } from 'react-router-dom';

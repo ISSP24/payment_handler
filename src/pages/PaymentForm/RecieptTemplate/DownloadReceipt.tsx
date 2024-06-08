@@ -11,6 +11,7 @@ export const downloadReceipt = (
                 const link = document.createElement('a');
                 link.download = name + '.jpeg';
                 link.href = dataUrl;
+                console.log({ dataUrl });
                 link.click();
             })
             .catch((err) => {

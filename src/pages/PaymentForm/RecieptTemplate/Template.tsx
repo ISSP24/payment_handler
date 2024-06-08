@@ -9,7 +9,6 @@ import Signature from './Signature.png';
 import { forwardRef } from 'react';
 import { numToRupeesText } from './numToRupeesText';
 import { GetPaymentDetailsResponse } from '../../../api/getPaymentDetails';
-import { PartyLogo } from './PartyLogo';
 
 export const Template = forwardRef<
     HTMLElement,
