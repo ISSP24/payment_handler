@@ -1,11 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-//@ts-ignore
-import Logo from './AdarshwadiLogo.jpg';
-//@ts-ignore
-import Stamp from './Stamp.png';
-//@ts-ignore
-import Signature from './Signature.png';
+import { Stamp, Signature } from './images';
 import { forwardRef } from 'react';
 import { numToRupeesText } from './numToRupeesText';
 import { GetPaymentDetailsResponse } from '../../../api/getPaymentDetails';
@@ -38,10 +33,6 @@ export const Template = forwardRef<
                 display={'flex'}
                 fontFamily={'TimesNewRoman'}
                 ref={ref}
-                sx={{
-                    transform: 'rotate(90deg) scale(0.65)',
-                    transformOrigin: 'center center',
-                }}
             >
                 <Box
                     bgcolor={'#F2FAFF'}
