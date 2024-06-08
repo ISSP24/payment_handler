@@ -33,7 +33,7 @@ export const PaymentForm = () => {
         address: 'Required field',
         sumOfRupees: 'Required field',
         transferNo: 'Required field',
-        drawnOn: 'Required field',
+        drawnOn: '',
     });
     const [values, setValues] = useState({
         date: new Date().getTime(),
@@ -43,7 +43,7 @@ export const PaymentForm = () => {
         userId: user.userId,
         sumOfRupees: '',
         transferNo: '',
-        drawnOn: '',
+        drawnOn: new Date().getTime(),
     });
 
     const [isTouched, setTouched] = useState(false);
@@ -90,7 +90,7 @@ export const PaymentForm = () => {
         >
             <Box
                 width={'100%'}
-                paddingX={4}
+                paddingX={2}
                 paddingY={4}
                 display={'flex'}
                 alignItems={'center'}
@@ -123,11 +123,11 @@ export const PaymentForm = () => {
                 width={'100%'}
                 flexGrow={1}
                 overflow={'auto'}
-                paddingX={4}
+                paddingX={2}
                 paddingY={4}
                 display={'flex'}
                 alignItems={'center'}
-                gap={3}
+                gap={2}
                 flexDirection={'column'}
                 boxSizing='border-box'
             >
@@ -140,6 +140,9 @@ export const PaymentForm = () => {
                             textField: {
                                 error: isTouched && Boolean(errors.date),
                                 helperText: isTouched ? errors.date : '',
+                                size: 'small',
+                                fullWidth: true,
+                                sx: { mb: 2 },
                             },
                         }}
                         onAccept={(e) => {
@@ -166,6 +169,7 @@ export const PaymentForm = () => {
                 <TextField
                     fullWidth
                     label='Received From'
+                    size='small'
                     value={values.receiveFrom}
                     error={isTouched && Boolean(errors.receiveFrom)}
                     helperText={isTouched ? errors.receiveFrom : ''}
@@ -193,6 +197,7 @@ export const PaymentForm = () => {
                 <TextField
                     fullWidth
                     label='PAN Number'
+                    size='small'
                     value={values.pan}
                     error={isTouched && Boolean(errors.pan)}
                     helperText={isTouched ? errors.pan : ''}
@@ -231,6 +236,7 @@ export const PaymentForm = () => {
                 <TextField
                     fullWidth
                     label='Address'
+                    size='small'
                     value={values.address}
                     error={isTouched && Boolean(errors.address)}
                     helperText={isTouched ? errors.address : ''}
@@ -260,6 +266,7 @@ export const PaymentForm = () => {
                     fullWidth
                     label='Sum of Rupees ( In Number )'
                     type='number'
+                    size='small'
                     value={values.sumOfRupees}
                     error={isTouched && Boolean(errors.sumOfRupees)}
                     onChange={(e) => {
@@ -288,6 +295,7 @@ export const PaymentForm = () => {
                 <TextField
                     fullWidth
                     label='Cash/ Cheque/ Transfer No.'
+                    size='small'
                     value={values.transferNo}
                     error={isTouched && Boolean(errors.transferNo)}
                     helperText={isTouched ? errors.transferNo : ''}
@@ -313,45 +321,38 @@ export const PaymentForm = () => {
                     InputLabelProps={{ sx: { color: '#999999' } }}
                     sx={{ borderBottomColor: '#E6E6E6', marginBottom: 2 }}
                 />
-                <TextField
-                    fullWidth
-                    label='Drawn On'
-                    value={values.drawnOn}
-                    error={isTouched && Boolean(errors.drawnOn)}
-                    helperText={isTouched ? errors.drawnOn : ''}
-                    onChange={(e) => {
-                        const val = e.target.value;
-                        setValues((prev) => ({
-                            ...prev,
-                            drawnOn: val,
-                        }));
-
-                        if (val === '') {
-                            setErrors((prev) => ({
-                                ...prev,
-                                drawnOn: 'Required field',
-                            }));
-                        } else {
-                            setErrors((prev) => ({
-                                ...prev,
-                                drawnOn: '',
-                            }));
-                        }
-                    }}
-                    InputLabelProps={{ sx: { color: '#999999' } }}
-                    sx={{ borderBottomColor: '#E6E6E6', marginBottom: 2 }}
-                />
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <MobileDatePicker
+                        label='Drawn on (in date)'
+                        sx={{ width: '100%' }}
+                        value={dayjs(values.date)}
+                        slotProps={{
+                            textField: {
+                                error: isTouched && Boolean(errors.drawnOn),
+                                helperText: isTouched ? errors.drawnOn : '',
+                                size: 'small',
+                                fullWidth: true,
+                                sx: { mb: 2 },
+                            },
+                        }}
+                        onAccept={(e) => {
+                            const epoch =
+                                e?.toDate().getTime() ?? new Date().getTime();
+                            setValues((prev) => ({ ...prev, drawnOn: epoch }));
+                        }}
+                    />
+                </LocalizationProvider>
             </Box>
             <Box
                 display={'flex'}
                 alignItems={'center'}
                 justifyContent={'space-around'}
-                px={4}
-                py={4}
+                px={2}
+                py={2}
+                pb={3}
             >
                 <Button
                     variant='contained'
-                    size='large'
                     autoCapitalize='off'
                     disabled={isTouched && isAnyError}
                     onClick={() => {
@@ -362,8 +363,8 @@ export const PaymentForm = () => {
                         }
                     }}
                     sx={{
-                        borderRadius: 4,
-                        py: 2,
+                        borderRadius: 2,
+                        py: 1,
                         px: 4,
                         fontSize: 16,
                         fontWeight: 700,

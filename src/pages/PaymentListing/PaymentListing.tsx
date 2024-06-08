@@ -36,7 +36,7 @@ export const PaymentListing = () => {
         []
     );
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,7 +55,7 @@ export const PaymentListing = () => {
         >
             <Box
                 width={'100%'}
-                paddingX={4}
+                paddingX={2}
                 paddingY={4}
                 display={'flex'}
                 alignItems={'center'}
@@ -80,7 +80,7 @@ export const PaymentListing = () => {
                     Previous Entries
                 </Typography>
             </Box>
-            <Box display={'flex'} paddingX={4} gap={2} alignItems={'center'}>
+            <Box display={'flex'} paddingX={2} gap={2} alignItems={'center'}>
                 <TextField
                     size='small'
                     fullWidth
@@ -138,7 +138,7 @@ export const PaymentListing = () => {
                 width={'100%'}
                 flexGrow={1}
                 overflow={'auto'}
-                paddingX={4}
+                paddingX={2}
                 paddingY={4}
                 display={'flex'}
                 alignItems={'center'}

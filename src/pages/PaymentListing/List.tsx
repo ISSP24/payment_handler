@@ -36,9 +36,9 @@ export const List = (props: ListProps) => {
                             borderColor={'#E6E6E6'}
                             px={1}
                         >
-                            <Box gap={1} maxWidth={250}>
+                            <Box gap={1} maxWidth={200}>
                                 <Typography
-                                    fontSize={18}
+                                    fontSize={14}
                                     sx={{ maxWidth: '100%' }}
                                     noWrap={true}
                                 >
@@ -56,7 +56,7 @@ export const List = (props: ListProps) => {
                                 <Typography
                                     variant='h6'
                                     marginRight={2}
-                                    fontSize={18}
+                                    fontSize={14}
                                     maxWidth={150}
                                     noWrap={true}
                                 >

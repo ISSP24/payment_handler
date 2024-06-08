@@ -93,12 +93,14 @@ export const PaymentDetails = () => {
                     alignItems={'center'}
                     justifyContent={'center'}
                 >
-                    <IconButton onClick={() => navigate('/payment-details/list')}>
+                    <IconButton
+                        onClick={() => navigate('/payment-details/list')}
+                    >
                         <ChevronLeftRounded fontSize='medium' />
                     </IconButton>
                 </Box>
                 <Typography variant='h5' fontWeight={700}>
-                    Fill the Form{' '}
+                    Details
                     <Chip
                         label={paymentId}
                         color='primary'
@@ -121,20 +123,19 @@ export const PaymentDetails = () => {
                 flexDirection={'column'}
                 boxSizing='border-box'
             >
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <MobileDatePicker
-                        label='Date'
-                        sx={{ width: '100%' }}
-                        value={dayjs(values?.date)}
-                        readOnly
-                        slotProps={{
-                            textField: {},
-                        }}
-                    />
-                </LocalizationProvider>
+                <TextField
+                    fullWidth
+                    label='Date'
+                    size='small'
+                    value={new Date(values?.date).toLocaleDateString()}
+                    InputProps={{ readOnly: true }}
+                    InputLabelProps={{ sx: { color: '#999999' } }}
+                    sx={{ borderBottomColor: '#E6E6E6', marginBottom: 2 }}
+                />
                 <TextField
                     fullWidth
                     label='Received From'
+                    size='small'
                     value={values?.receiveFrom}
                     InputProps={{ readOnly: true }}
                     InputLabelProps={{ sx: { color: '#999999' } }}
@@ -143,6 +144,7 @@ export const PaymentDetails = () => {
                 <TextField
                     fullWidth
                     label='PAN Number'
+                    size='small'
                     value={values?.pan}
                     InputProps={{ readOnly: true }}
                     InputLabelProps={{ sx: { color: '#999999' } }}
@@ -151,6 +153,7 @@ export const PaymentDetails = () => {
                 <TextField
                     fullWidth
                     label='Address'
+                    size='small'
                     value={values?.address}
                     InputProps={{ readOnly: true }}
                     InputLabelProps={{ sx: { color: '#999999' } }}
@@ -159,6 +162,7 @@ export const PaymentDetails = () => {
                 <TextField
                     fullWidth
                     label='Sum of Rupees ( In Number )'
+                    size='small'
                     type='number'
                     value={values?.sumOfRupees}
                     InputProps={{ readOnly: true }}
@@ -168,6 +172,7 @@ export const PaymentDetails = () => {
                 <TextField
                     fullWidth
                     label='Cash/ Cheque/ Transfer No.'
+                    size='small'
                     value={values?.transferNo}
                     InputProps={{ readOnly: true }}
                     InputLabelProps={{ sx: { color: '#999999' } }}
@@ -175,8 +180,9 @@ export const PaymentDetails = () => {
                 />
                 <TextField
                     fullWidth
-                    label='Drawn On'
-                    value={values?.drawnOn}
+                    label='Drawn on'
+                    size='small'
+                    value={new Date(values?.drawnOn).toLocaleDateString()}
                     InputProps={{ readOnly: true }}
                     InputLabelProps={{ sx: { color: '#999999' } }}
                     sx={{ borderBottomColor: '#E6E6E6', marginBottom: 2 }}
@@ -191,12 +197,11 @@ export const PaymentDetails = () => {
             >
                 <Button
                     variant='contained'
-                    size='large'
                     autoCapitalize='off'
                     onClick={() => setDialog(true)}
                     sx={{
-                        borderRadius: 4,
-                        py: 2,
+                        borderRadius: 2,
+                        py: 1,
                         px: 4,
                         fontSize: 16,
                         fontWeight: 700,
@@ -232,7 +237,7 @@ export const PaymentDetails = () => {
                     </Alert>
                 )}
             </Snackbar>
-            <Dialog open={dialog} maxWidth='xs' fullWidth>
+            <Dialog open={dialog} maxWidth='xs' fullWidth fullScreen>
                 <DialogContent>
                     <Template {...values} ref={templateRef} />
                 </DialogContent>

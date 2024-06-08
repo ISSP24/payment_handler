@@ -9,10 +9,11 @@ export const Section = (props: SectionProps) => {
             sx={{
                 maxWidth: '500px',
                 width: '100%',
-                height: '100vh',
+                height: '100dvh',
                 bgcolor: '#ffffff',
                 marginLeft: 'auto',
                 marginRight: 'auto',
+                overflow: 'hidden',
                 ...sx,
             }}
             {...other}

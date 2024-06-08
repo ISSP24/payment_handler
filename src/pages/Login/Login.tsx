@@ -42,7 +42,15 @@ export const Login = () => {
     };
 
     return (
-        <Box>
+        <Box
+            sx={{
+                height: '100%',
+                overflow: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+            }}
+        >
             <Box
                 width='100%'
                 display='flex'
@@ -59,14 +67,15 @@ export const Login = () => {
                 flexDirection={'column'}
                 alignItems={'center'}
                 justifyContent={'start'}
-                paddingX={8}
+                paddingBottom={8}
+                paddingX={2}
                 boxSizing='border-box'
                 textAlign='center'
                 gap={4}
             >
                 <TextField
                     fullWidth
-                    size='medium'
+                    size='small'
                     label='Security code'
                     placeholder='Enter you security code'
                     sx={{ fontSize: 24 }}
@@ -95,11 +104,10 @@ export const Login = () => {
                 ></TextField>
                 <Button
                     variant='contained'
-                    size='large'
+                    // size='large'
                     fullWidth
                     sx={{
-                        py: 2,
-                        borderRadius: 4,
+                        borderRadius: 2,
                         fontSize: 20,
                         fontWeight: 700,
                         bgcolor: '#346EEC',
