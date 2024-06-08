@@ -271,7 +271,7 @@ export const Template = forwardRef<
                                 }}
                                 left={1111}
                             >
-                                {date}
+                                {new Date(date).toLocaleDateString()}
                             </Typography>
                         </Box>
                         <Box
@@ -466,7 +466,7 @@ export const Template = forwardRef<
                                 }}
                                 left={170}
                             >
-                                {drawnOn}
+                                {new Date(drawnOn).toLocaleDateString()}
                             </Typography>
                         </Box>
                         <Box
