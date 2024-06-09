@@ -7,7 +7,7 @@ type AddPaymentDetailsParams = {
     sumOfRupees: string;
     userId: string;
     transferNo: string;
-    drawnOn: number;
+    drawnOn: string;
 };
 
 type AddPaymentDetailsResponse = {
@@ -21,7 +21,7 @@ type AddPaymentDetailsResponse = {
         paymentDetailId: string;
         userId: number;
         transferNo: string;
-        drawnOn: number;
+        drawnOn: string;
     };
 };
 

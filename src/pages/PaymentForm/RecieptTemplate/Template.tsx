@@ -466,7 +466,7 @@ export const Template = forwardRef<
                                 }}
                                 left={170}
                             >
-                                {new Date(drawnOn).toLocaleDateString()}
+                                {new Date(Number(drawnOn)).toLocaleDateString()}
                             </Typography>
                         </Box>
                         <Box

@@ -181,7 +181,7 @@ export const PaymentDetails = () => {
                     fullWidth
                     label='Drawn on'
                     size='small'
-                    value={new Date(values?.drawnOn).toLocaleDateString()}
+                    value={new Date(Number(values?.drawnOn)).toLocaleDateString()}
                     InputProps={{ readOnly: true }}
                     InputLabelProps={{ sx: { color: '#999999' } }}
                     sx={{ borderBottomColor: '#E6E6E6', marginBottom: 2 }}

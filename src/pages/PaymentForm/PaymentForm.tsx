@@ -66,7 +66,10 @@ export const PaymentForm = () => {
 
     const handleSubmit = async () => {
         setSubmitting(true);
-        const res = await addPaymentDetails(values);
+        const res = await addPaymentDetails({
+            ...values,
+            drawnOn: values.drawnOn.toString(),
+        });
 
         if (res.success === true && res.data) {
             setValues(res.data as any);
@@ -379,7 +382,11 @@ export const PaymentForm = () => {
                         flexGrow: 1,
                     }}
                 >
-                    {isSubmitting ? <CircularProgress /> : 'Save and Share'}
+                    {isSubmitting ? (
+                        <CircularProgress sx={{ p: 2 }} />
+                    ) : (
+                        'Save and Share'
+                    )}
                 </Button>
                 <Snackbar
                     open={Boolean(snackbar)}
