@@ -61,6 +61,7 @@ export const PaymentDetails = () => {
     }, []);
 
     const templateRef = useRef(null);
+    const anchorRef = useRef(null);
 
     const navigate = useNavigate();
 
@@ -241,18 +242,22 @@ export const PaymentDetails = () => {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => setDialog(false)}>Cancel</Button>
-                    <Button
-                        onClick={() => {
-                            downloadReceipt(
-                                templateRef,
-                                values.paymentDetailId.toString()
-                            );
-                            setDialog(false);
-                        }}
-                        variant='contained'
-                    >
-                        Download
-                    </Button>
+                    <a ref={anchorRef}>
+                        <Button
+                            LinkComponent={'a'}
+                            onClick={() => {
+                                downloadReceipt(
+                                    templateRef,
+                                    anchorRef,
+                                    values.paymentDetailId.toString()
+                                );
+                                setDialog(false);
+                            }}
+                            variant='contained'
+                        >
+                            Download
+                        </Button>
+                    </a>
                 </DialogActions>
             </Dialog>
         </Box>

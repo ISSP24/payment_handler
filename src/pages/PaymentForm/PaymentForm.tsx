@@ -79,6 +79,7 @@ export const PaymentForm = () => {
     };
 
     const templateRef = useRef(null);
+    const anchorRef = useRef(null);
 
     return (
         <Box
@@ -282,10 +283,11 @@ export const PaymentForm = () => {
                                 sumOfRupees: 'Required field',
                             }));
                         } else if (Number(val) > 1e9) {
-                             setErrors((prev) => ({
-                                 ...prev,
-                                 sumOfRupees: 'Maximun 100,00,00,000 amount allowed',
-                             }));
+                            setErrors((prev) => ({
+                                ...prev,
+                                sumOfRupees:
+                                    'Maximun 100,00,00,000 amount allowed',
+                            }));
                         } else {
                             setErrors((prev) => ({
                                 ...prev,
@@ -418,22 +420,25 @@ export const PaymentForm = () => {
                         >
                             Skip
                         </Button>
-                        <Button
-                            onClick={() => {
-                                downloadReceipt(
-                                    templateRef,
-                                    //@ts-ignore
-                                    values.paymentDetailId.toString()
-                                );
-                                setTimeout(() => {
-                                    setDialog(false);
-                                    navigate('/payment-details/list');
-                                }, 0);
-                            }}
-                            variant='contained'
-                        >
-                            Download
-                        </Button>
+                        <a ref={anchorRef}>
+                            <Button
+                                onClick={() => {
+                                    downloadReceipt(
+                                        templateRef,
+                                        anchorRef,
+                                        //@ts-ignore
+                                        values.paymentDetailId.toString()
+                                    );
+                                    setTimeout(() => {
+                                        setDialog(false);
+                                        navigate('/payment-details/list');
+                                    }, 0);
+                                }}
+                                variant='contained'
+                            >
+                                Download
+                            </Button>
+                        </a>
                     </DialogActions>
                 </Dialog>
             </Box>
