@@ -70,7 +70,7 @@ export const Navigator = () => {
                                     xlinkHref='#SunCatcherStudio'
                                     startOffset='60'
                                 >
-                                    INDIAN SWARNA
+                                    INDIAN SAVARN
                                 </textPath>
                             </text>
                         </svg>
@@ -146,10 +146,10 @@ export const Navigator = () => {
                         lineHeight={1.4}
                         marginBottom={2}
                     >
-                        Welcome to Indian Swarna Samaj Party
+                        Welcome to Indian Savarn Samaj Party
                     </Typography>
                     <Typography variant='body1' color='#666666'>
-                        Welcome to Indian Swarna Samaj Party
+                        Elevating our community with a commitment to excellence
                     </Typography>
                 </Box>
             </Box>

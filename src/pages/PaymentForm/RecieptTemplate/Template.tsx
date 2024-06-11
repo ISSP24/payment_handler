@@ -91,7 +91,7 @@ export const Template = forwardRef<
                                             xlinkHref='#SunCatcherStudio'
                                             startOffset='60'
                                         >
-                                            INDIAN SWARNA
+                                            INDIAN SAVARN
                                         </textPath>
                                     </text>
                                 </svg>
@@ -162,7 +162,7 @@ export const Template = forwardRef<
                                 fontFamily={'serif'}
                                 fontWeight={'bold'}
                             >
-                                INDIAN SWARNA SAMAJ PARTY
+                                INDIAN SAVARN SAMAJ PARTY
                             </Typography>
                         </Box>
                     </Box>
@@ -546,7 +546,7 @@ export const Template = forwardRef<
                                         left: 260,
                                     }}
                                 />
-                                For, Indian Swarna Samaj Party
+                                For, Indian Savarn Samaj Party
                             </Typography>
                         </Box>
                         <Box
